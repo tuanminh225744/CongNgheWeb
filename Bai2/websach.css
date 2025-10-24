@@ -1,0 +1,420 @@
+/*
+==================================================
+1. STYLE CHUNG (BODY, RESET, UTILITIES)
+==================================================
+*/
+:root {
+    --primary-color: #007bff; 
+    --secondary-color: #28a745; 
+    --text-color: #333;
+    --light-bg: #f4f7f6; 
+    --dark-bg: #343a40; 
+    --card-bg: #fff;
+    --border-color: #ddd;
+    --spacing-unit: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    padding-top: 60px; 
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.header-container,
+.footer-container,
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
+}
+
+.hidden {
+    display: none !important; 
+}
+
+/*
+==================================================
+2. HEADER VÀ THANH ĐIỀU HƯỚNG
+==================================================
+*/
+
+.header-main {
+    background-color: var(--dark-bg);
+    color: white;
+    padding: 10px 0;
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-right: var(--spacing-unit);
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1; 
+    max-width: 300px;
+    margin: 5px 20px;
+}
+
+.search-bar input {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    width: 100%;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius:  4px ;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 5px;
+}
+
+.search-bar button:hover {
+    background-color: #218838;
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.nav-link {
+    color: white;
+    margin-left: 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+}
+
+/*
+==================================================
+3. MAIN CONTENT VÀ INTRO
+==================================================
+*/
+
+.intro-section {
+    text-align: center;
+    padding: 40px 0;
+    background-color: var(--card-bg);
+    margin-bottom: var(--spacing-unit);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.intro-title {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+.intro-slogan {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/*
+==================================================
+4. DANH SÁCH SẢN PHẨM (PRODUCT GRID)
+==================================================
+*/
+
+.products-section {
+    padding: var(--spacing-unit) 0;
+}
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-unit);
+}
+
+.products-title {
+    color: var(--dark-bg);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.add-product-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+
+.add-product-btn:hover {
+    background-color: #218838;
+    text-decoration: none;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: var(--spacing-unit);
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.product-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    font-weight: 900;
+}
+
+.price-unit {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-left: 2px;
+}
+
+/*
+==================================================
+5. FORM THÊM SẢN PHẨM
+==================================================
+*/
+
+.contact-form-container {
+    padding: 40px 0;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: var(--spacing-unit);
+    color: var(--primary-color);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-unit);
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.required {
+    color: red;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+textarea.form-input {
+    resize: vertical;
+}
+
+.form-submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.form-submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/*
+==================================================
+6. FOOTER
+==================================================
+*/
+
+.footer-main {
+    background-color: var(--dark-bg);
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: var(--spacing-unit);
+}
+
+.footer-text {
+    font-size: 0.9rem;
+}
+
+/*
+==================================================
+7. RESPONSIVE DESIGN (MEDIA QUERIES)
+==================================================
+*/
+
+
+@media (max-width: 768px) {
+    
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        max-width: 100%;
+        margin: 5px 0 10px 0;
+    }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: space-around;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-link {
+        margin: 0 5px;
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+
+    .main-content{
+        margin-top: 30px;
+    }
+    
+    /* Sản phẩm chuyển sang hiển thị 1 cột */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .products-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .products-title {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .add-product-btn {
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Giảm khoảng đệm chung */
+    .header-container,
+    .footer-container,
+    .main-content {
+        padding: 0 10px;
+    }
+    
+    body {
+        padding-top: 120px; /* Tăng padding-top để chứa header 2 dòng trên mobile */
+    }
+
+    .intro-section {
+        padding: 20px 0;
+    }
+}
